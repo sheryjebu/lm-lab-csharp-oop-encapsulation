@@ -1,0 +1,47 @@
+--------------------------------------------------------
+-- Run your Console application, what is it doing? What is being outputted to the console?
+--------------------------------------------------------
+This program helps us to understand the importance of encapsulation and how to create a code with good encapsulation. Here we can see the user has  two different bank accounts one is secured and other is non secured. The program shows how a fraudulent activity can be stoped with the help of encapsulation.
+
+Below is the resulted output
+
+--- DODGY BANK ACCOUNT ---
+
+Mmm...I spot a dodgy bank account! Let's make one!
+What is my current balance?
+Your account balance is 0
+Let's deposit an amount of 30
+Your account balance is 80
+Wow! Looks like we get a reward of 50 when we deposit an amount
+Let's be naughty and add rewards without depositing!
+Your account balance is 230
+Wow! We're rich!
+Let's make a lot of money right now! Let's change the account balance directly!
+Your account balance is 1000000
+😻 Weeeeee!!!!
+
+--- SECURE BANK ACCOUNT ---
+
+Mmm...let's make a secure bank account!
+What is my current balance?
+Your account balance is 0
+Let's deposit an amount of 30
+Your account balance is 80
+Wow! Looks like we get a reward of 50 when we deposit an amount
+Let's be naughty and add rewards without depositing!
+Oh no :( It looks like we can't do this - it's too secure!
+Your account balance is 80
+Let's make a lot of money right now! Let's change the account balance directly!
+Oh no :( It looks like we can't do this - it's too secure!
+Your account balance is 80
+😹 Well I guess that's secure!
+
+--------------------------------------------------------
+-- Look at the `DodgyBankAccount`, this class is not well-encapsulated. Can you note down the problems with how the class is designed, and the ways it is being misused?
+--------------------------------------------------------
+Here 'DodgyBankAccount' class is not encapsulated. The sensitive information like account number, balance etc are declared as public instead of private.The account number is not private and readoly. Thus those attributes are visible to all and also can be accessed outside the class, thus they can morfed and misusing of the personal data, fraudulent activity takes place. The account is not secured.
+
+--------------------------------------------------------
+-- Compare and contrast the `DodgyBankAccount` and the `SecureBankAccount`, how is the `SecureBankAccount` different to the `DodgyBankAccount`? How is it designed to prevent it from being misused? Are there instances of better method names for clearer abstraction?
+--------------------------------------------------------
+In SecureBankAccount the sensitive account details are kept as Private and methods are hidden, so that they are only accessed with in the class and thus, we can only access those methods as per the required scenerio.The account is well secured and No fraudulent activities is encouraged here.This is a best example for encapsulation.
