@@ -1,4 +1,4 @@
-﻿using System;
+﻿// See https://aka.ms/new-console-template for more information
 namespace Encapsulation.Models
 {
     public class SecureBankAccount

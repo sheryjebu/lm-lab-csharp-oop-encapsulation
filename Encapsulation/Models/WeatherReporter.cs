@@ -1,63 +1,63 @@
-﻿using System;
+﻿// See https://aka.ms/new-console-template for more information
 namespace Encapsulation.Models
 {
     public class WeatherReporter
     {
-        public string Location;
-        public double Temperature;
+        private readonly string _location;
+        private double _temperature;
+        private const int _fahrenheit = 32;
 
         public WeatherReporter(string location, double temperature)
         {
-            Location = location;
-            Temperature = temperature;
+            _location = location;
+            _temperature = temperature;
         }
 
-        public string Print()
+        public string DisplayWeatherReport()
         {
-            double newTemp = (9.0 / 5.0) * Temperature + 32;
-            return $"I am in {Location} and it is {Check1()}. {Check2()}. The temperature in Fahrenheit is {newTemp}.";
+            double newTemp = (9.0 / 5.0) * _temperature + _fahrenheit;
+            return $"I am in {_location} and it is {GetWeatherConditionAtLocation()}. {GetHowTempFeelsLike()}. The temperature in Fahrenheit is {newTemp}.";
         }
 
-        public string Check1()
+
+        public string GetWeatherConditionAtLocation()
         {
-            if (Location == "London")
+            switch(_location)
             {
+                case "London":
+                    return "🌦";
 
-                return "🌦";
+                case "California":
+                    return "🌅";
+
+                case "Cape Town":
+                    return "🌤";
+
+                default:
+                    return "🔆";
 
             }
-            else if (Location == "California")
-            {
-
-                return "🌅";
-
-            }
-            else if (Location == "Cape Town")
-            {
-
-                return "🌤";
-
-            }
-            return "🔆";
+            
         }
 
-        public string Check2()
+        public string GetHowTempFeelsLike()
         {
-            if (Temperature > 30)
-            {
 
-                return "It's too hot 🥵!";
+            switch (_temperature)
+            {
+                case >30:
+                    return "It's too hot 🥵!";
+
+                case <10:
+                    return "It's too cold 🥶!";
+
+                default:
+                    return "Ahhh...it's just right 😊!";
 
             }
-            else if (Temperature < 10)
-            {
+           
 
-                return "It's too cold 🥶!";
-
-            }
-            return "Ahhh...it's just right 😊!";
         }
-
     }
 }
 

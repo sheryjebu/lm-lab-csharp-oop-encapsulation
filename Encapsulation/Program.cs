@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System;
+
 using Encapsulation.Models;
 
 const string MY_ACCOUNT_NUMBER = "ABCDEFG123";
